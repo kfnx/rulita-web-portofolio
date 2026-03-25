@@ -1,325 +1,438 @@
+/* ─── Container ────────────────────────────────────────────────── */
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
+  min-height: 100vh;
+  background: #ffffff;
 }
 
-.yellowGradient {
-  background: #fdf1d6;
-  position: absolute;
-  width: 512px;
-  left: calc(50% - 512px / 2 + 199px);
-  top: -320px;
-  bottom: 423px;
-  filter: blur(196px);
-  z-index: 0;
-}
-
-.purpleGradient {
-  width: 632px;
-  background: rgba(174, 178, 243, 0.8);
-  position: absolute;
-  width: 512px;
-  left: calc(50% - 632px / 2 - 456px);
-  top: 476px;
-  bottom: -320px;
-  filter: blur(176px);
-  z-index: 0;
-}
-
+/* ─── Navigation ───────────────────────────────────────────────── */
 .nav {
   display: flex;
-  width: 100%;
   justify-content: space-between;
-  padding: 24px 132px;
-  z-index: 1;
-}
-
-.nav button {
-  font-family: "Avenir";
-  font-size: 20px;
-  font-weight: 800;
-  background-color: transparent;
-  border: none;
-  box-sizing: border-box;
-}
-
-.nav div {
-  display: flex;
   align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #e8e8e8;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 100;
 }
 
-.email {
-  margin-right: 14px;
+.navName {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.nav .resume {
-  background: #5459ab;
-  border-radius: 24px;
-  color: #ffffff;
-  padding: 8px 24px;
-  margin-left: 24px;
-}
-
-.main {
-  width: 100%;
-  z-index: 1;
-}
-
-.header {
-  padding: 2rem 0px 0px;
-  flex: 1;
+.navCenter {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 92px);
+  gap: 2px;
 }
 
-.hero {
-  width: 120px;
-  height: 120px;
-  background-color: #ffffff;
-  border-radius: 50%;
+.navCenter span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.navRight {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+/* ─── Main ─────────────────────────────────────────────────────── */
+.main {
+  flex: 1;
+}
+
+/* ─── Hero Section ─────────────────────────────────────────────── */
+.heroSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 61px);
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  border-right: 1px solid #e8e8e8;
+}
+
+.heroMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heroMetaItem {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.heroRight {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 40px 40px 36px;
+}
+
+.heroTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(72px, 9vw, 128px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #0a0a0a;
+}
+
+/* ─── About Section ────────────────────────────────────────────── */
+.aboutSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 56px 40px;
+  border-bottom: 1px solid #e8e8e8;
+  gap: 40px;
+}
+
+.sectionLabel {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+  align-self: flex-start;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.aboutText {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+  max-width: 520px;
+}
+
+.yearsTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  border: 1px solid #0a0a0a;
+  padding: 6px 14px;
+  width: fit-content;
+}
+
+/* ─── Portfolio Section ────────────────────────────────────────── */
+.portfolioSection {
+  padding: 56px 40px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.portfolioItem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.portfolioImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolioImageBg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.portfolioItem:hover .portfolioImageBg {
+  filter: grayscale(0%);
+  transform: scale(1.04);
+}
+
+.portfolioImagePlaceholder {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
-  filter: drop-shadow(7px 7px 21px rgba(0, 0, 0, 0.15));
 }
 
-.title {
-  font-size: 30px;
-  font-family: "Avenir";
+.portfolioPlaceholderText {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.portfolioLabel {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
   font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
 }
 
-.description {
-  margin-top: 4px;
-  margin-bottom: 24px;
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 56px;
-  text-align: center;
-  max-width: 650px;
-  color: #010101;
+/* ─── Specializations ──────────────────────────────────────────── */
+.specialSection {
+  padding: 56px 40px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
-.subdescription {
-  font-size: 20px;
-  line-height: 28px;
-  font-family: "Avenir";
-  text-align: center;
-  max-width: 650px;
-}
-
-.subdescription a {
-  color: #5459ab;
-  font-weight: bold;
-}
-
-.main button {
-  background-color: transparent;
-  border: none;
-  padding: 8px;
-  position: absolute;
-  bottom: 24px;
-}
-
-.arrow {
-  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.2));
-}
-
-.footer {
-  width: 100%;
-  border-top: 1px solid #eaeaea;
+.specialHeader {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: #272727;
-  color: #ffffff;
-  padding: 96px 124px;
-  z-index: 1;
+  margin-bottom: 48px;
 }
 
-.footer button {
-  background: #ffe9f8;
-  border-radius: 55.9055px;
-  border: none;
-  padding: 8px 24px;
+.specialTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0;
 }
 
-.footer h4 {
-  font-size: 60px;
-  background: linear-gradient(
-    137deg,
-    rgba(208, 228, 254, 1) 0%,
-    rgba(254, 211, 241, 1) 50%,
-    rgba(174, 178, 243, 1) 100%
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 0px;
-  margin-bottom: 24px;
-}
-
-.sendmail {
-  max-width: 550px;
-  margin-right: 24px;
-}
-
-.sendmail p {
-  margin-bottom: 56px;
-}
-
-.sendmail button {
-  font-size: 20px;
-}
-
-.connect {
-  width: 240px;
-  text-align: left;
-}
-
-.connect p {
-  color: #c4c4c4;
-  font-size: 30px;
-}
-
-.connect hr {
-  border: 2px solid #3a3a3a;
-}
-
-.account {
-  padding-top: 24px;
+.specialGrid {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
 }
 
-.account a {
-  padding: 12px 0px;
+.specialItem {
+  background: #ffffff;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-/* responsive (mobile) */
+.specialNum {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #aaa;
+}
 
-.hideInMobile {
+.specialItem h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #0a0a0a;
+  line-height: 1.2;
+}
+
+.specialItem p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+/* ─── Contact Section ──────────────────────────────────────────── */
+.contactSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 72px 40px;
+  gap: 40px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contactLink {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: #0a0a0a;
   display: block;
+  transition: letter-spacing 0.25s ease, color 0.2s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
 }
 
-.hideInTablet {
-  display: block;
+.contactLink:hover {
+  letter-spacing: 0.02em;
+  color: #555;
 }
 
-/* Responsive for Mobile */
-@media (max-width: 767px) {
-  .hideInMobile {
-    display: none !important;
-  }
-  .yellowGradient {
-    width: 196px;
-    left: calc(50% - 196px / 2 + 56px);
-    bottom: 396px;
-    filter: blur(96px);
-  }
+/* ─── Footer ───────────────────────────────────────────────────── */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.footer span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/* ─── Responsive: Tablet ───────────────────────────────────────── */
+@media (max-width: 991px) {
   .nav {
-    padding: 24px;
+    padding: 16px 24px;
   }
-  .header {
-    padding: 1rem 32px;
-    min-height: calc(100vh - 82px);
+
+  .navCenter {
+    display: none;
   }
-  .title {
-    font-size: 16px;
+
+  .heroSection {
+    grid-template-columns: 1fr;
+    min-height: auto;
   }
-  .description {
-    width: 290px;
-    font-size: 32px;
-    line-height: 42px;
+
+  .heroLeft {
+    display: none;
   }
-  .subdescription {
-    width: 290px;
-    font-size: 14px;
-    line-height: 19px;
+
+  .heroRight {
+    padding: 80px 24px 48px;
+    min-height: 60vh;
+    align-items: flex-end;
   }
+
+  .aboutSection {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+    gap: 16px;
+  }
+
+  .portfolioSection {
+    padding: 40px 24px;
+  }
+
+  .portfolioGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .specialSection {
+    padding: 40px 24px;
+  }
+
+  .specialGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contactSection {
+    grid-template-columns: 1fr;
+    padding: 48px 24px;
+    gap: 16px;
+  }
+
   .footer {
-    height: 100vh;
-    flex-direction: column;
-    text-align: center;
-    padding: 56px 24px;
-  }
-  .sendmail {
-    margin-right: 0px;
-  }
-  .sendmail p {
-    font-size: 14px;
-  }
-  .connect {
-    margin-top: 124px;
-    width: 100%;
-    text-align: center;
-  }
-  .account {
-    grid-template-columns: repeat(5, auto);
-    grid-gap: 8px;
-  }
-  .account a {
-    font-size: 12px;
+    padding: 16px 24px;
   }
 }
 
-/* Responsive for Tablet */
-@media (min-width: 767px) and (max-width: 991px) {
-  .hideInTablet {
-    display: none !important;
-  }
-  .hideInMobile {
-    display: none !important;
-  }
-  .yellowGradient {
-    width: 196px;
-    left: calc(50% - 196px / 2 + 56px);
-    bottom: 396px;
-    filter: blur(96px);
-  }
+/* ─── Responsive: Mobile ───────────────────────────────────────── */
+@media (max-width: 600px) {
   .nav {
-    padding: 24px 44px;
+    padding: 14px 20px;
   }
-  .header {
-    min-height: calc(100vh - 82px);
+
+  .navRight {
+    display: none;
   }
+
+  .heroRight {
+    padding: 60px 20px 40px;
+  }
+
+  .aboutSection {
+    padding: 32px 20px;
+  }
+
+  .portfolioSection {
+    padding: 32px 20px;
+  }
+
+  .portfolioGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .specialSection {
+    padding: 32px 20px;
+  }
+
+  .specialGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactSection {
+    padding: 40px 20px;
+  }
+
   .footer {
-    height: 100vh;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .sendmail {
-    margin-right: 0px;
-  }
-  .sendmail p {
-    font-size: 20px;
-  }
-  .connect {
-    margin-top: 124px;
-  }
-}
-
-@media (min-height: 767px) {
-  .header {
-    padding: 5rem 0px;
-  }
-}
-
-@media (min-height: 991px) {
-  .header {
-    padding: 10rem 0px;
-  }
-}
-
-@media (min-height: 1240px) {
-  .header {
-    padding: 20rem 0px;
+    padding: 14px 20px;
   }
 }

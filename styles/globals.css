@@ -1,17 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,800");
-@import url("https://fonts.googleapis.com/css?family=Avenir:400,800");
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800&family=Barlow:wght@400;500;600&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
-  background: linear-gradient(
-    120deg,
-    rgba(208, 228, 254, 1) 0%,
-    rgba(254, 211, 241, 1) 60%,
-    rgba(174, 178, 243, 1) 100%
-  );
+  font-family: 'Barlow', sans-serif;
+  background: #ffffff;
+  color: #0a0a0a;
   scroll-behavior: smooth;
 }
 
@@ -21,8 +16,7 @@ a {
 }
 
 button {
-  font-family: "Open Sans";
-  min-height: 44px;
+  font-family: 'Barlow', sans-serif;
   cursor: pointer;
 }
 
